@@ -92,5 +92,5 @@ def main():
 if __name__ == '__main__':
     main()
 
-# 도커 로컬 환경 실행 명령어
+# 도커로 로컬 환경으로 실행시 명령어
 # docker run -p <PORT>:<PORT> <IMAGE> python socket_server.py
