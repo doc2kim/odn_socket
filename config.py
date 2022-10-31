@@ -10,11 +10,11 @@ USER = os.environ.get('POSTGRES_USER')
 PASSWORD = os.environ.get('POSTGRES_PASSWORD')
 DBNAME = os.environ.get('POSTGRES_DBNAME')
 PORT = os.environ.get('POSTGRES_PORT')
-IP = os.environ.get('POSTGRES_IP')
+HOST = os.environ.get('POSTGRES_HOST')
 
 
 engine = create_engine(
-    f'postgresql+psycopg2://{USER}:{PASSWORD}@{IP}:{PORT}/{DBNAME}')
+    f'postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}')
 
 base = declarative_base()
 

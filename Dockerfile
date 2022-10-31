@@ -4,13 +4,11 @@ ENV PYTHONUNBUFFERED=1 \
     PYTHONIOENCODING=UTF-8
 
 WORKDIR /odn_socket
+COPY . /odn_socket
 
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 RUN apt-get update && apt-get upgrade -y
 
-COPY requirements.txt /odn_api/
 
-ADD . /odn_socket
-
-RUN pip install -r requirements.txt
+ENTRYPOINT [ "python", "./socket_server.py" ]
